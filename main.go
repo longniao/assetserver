@@ -13,6 +13,7 @@ func main() {
 	}
 
 	webroot, err := c.GetString("server", "webroot")
+	port, err := c.GetInt64("server", "port")
 
     http.Handle("/", http.FileServer(http.Dir(webroot)))
     http.ListenAndServe(":8080", nil)
